@@ -36,13 +36,17 @@ jobs:
           toolchains: arm-zephyr-eabi
           ccache-cache-key: ${{ matrix.os }}
 
-      - name: Build firmware
+      - name: Build firmware (QEMU targets for smoke tests)
         working-directory: example-application
         shell: bash
         run: |
           if [ "${{ runner.os }}" = "Windows" ]; then
             EXTRA_TWISTER_FLAGS="--short-build-path -O/tmp/twister-out"
           fi
+          # Build for QEMU targets first (fast smoke tests)
+          west build -b qemu_x86 app --pristine
+          west build -b qemu_cortex_m3 app --pristine
+          # Then run full twister tests
           west twister -T app -v --inline-logs --integration $EXTRA_TWISTER_FLAGS
 
       - name: Twister Tests
