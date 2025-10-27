@@ -3,6 +3,7 @@
 
 menu "Custom libraries"
 
+rsource "coo_commons/Kconfig"
 rsource "custom/Kconfig"
 
 endmenu
