@@ -6,7 +6,7 @@ Caltech Optical Observatories (COO) standardized template for Zephyr RTOS firmwa
 
 ```bash
 # Create workspace
-west init -m https://github.com/CaltechOpticalObservatories/zephyr-coo-template --mr main my-project
+west init -m https://github.com/mikelangmayr/zephyr-coo-template --mr main my-project
 cd my-project && west update
 
 # Build and test in QEMU (no hardware needed)
