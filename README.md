@@ -5,6 +5,13 @@ Caltech Optical Observatories (COO) standardized template for Zephyr RTOS firmwa
 ## Quick Start
 
 ```bash
+# Create and activate virtual environment
+python3 -m venv ~/zephyr-venv
+source ~/zephyr-venv/bin/activate  # On Windows: ~/zephyr-venv/Scripts/activate
+
+# Install west
+pip install west
+
 # Create workspace
 west init -m https://github.com/mikelangmayr/zephyr-coo-template --mr main my-project
 cd my-project && west update
