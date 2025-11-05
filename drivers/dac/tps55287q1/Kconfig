@@ -1,0 +1,6 @@
+config TPS55287Q1
+    bool "TPS55287-Q1 36V, 4A Buck-Boost Converter"
+    default n
+    depends on I2C
+    help
+        Enable driver for the TPS55287-Q1 36V, 4A Buck-Boost Converter. This driver depends on the I2C subsystem being enabled.
