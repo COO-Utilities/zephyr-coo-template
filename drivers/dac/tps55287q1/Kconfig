@@ -4,3 +4,13 @@ config TPS55287Q1
     depends on I2C
     help
         Enable driver for the TPS55287-Q1 36V, 4A Buck-Boost Converter. This driver depends on the I2C subsystem being enabled.
+
+if TPS55287Q1
+
+config TPS55287Q1_INIT_PRIORITY
+	int "Init priority"
+	default 80
+	help
+	  TI TPS55287Q1 device driver initialization priority. It needs to be greater than CONFIG_I2C_INIT_PRIORITY = 60.
+
+endif # TPS55287Q1

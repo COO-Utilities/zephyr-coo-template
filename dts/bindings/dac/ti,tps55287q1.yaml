@@ -1,3 +1,10 @@
 description: TI TPS55287-Q1 36V, 4A Buck-Boost Converter
 compatible: ti,tps55287q1
 include: [dac-controller.yaml, i2c-device.yaml]
+
+properties:
+  "#io-channel-cells":
+    const: 1
+
+io-channel-cells:
+  - output
