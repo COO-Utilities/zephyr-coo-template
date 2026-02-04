@@ -89,14 +89,14 @@ int coo_net_tcp_socket_create(uint16_t port, bool is_server);
 int coo_net_udp_socket_create(uint16_t port);
 
 /**
- * @brief Connect to a TCP server with timeout
+ * @brief Connect to a TCP server with timeout (using Zephyr zsock API)
  *
  * @param sockfd Socket file descriptor
  * @param addr Server address
  * @param timeout_ms Timeout in milliseconds
  * @return 0 on success, negative error code on failure
  */
-int coo_net_tcp_connect(int sockfd, const struct sockaddr *addr, int timeout_ms);
+int coo_net_tcp_zsock_connect(int sockfd, const struct sockaddr *addr, int timeout_ms);
 
 /**
  * @brief Send data with retry logic
