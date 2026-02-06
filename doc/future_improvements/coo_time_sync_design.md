@@ -87,11 +87,6 @@ bool coo_time_is_valid(void);
  * @return 0 on success, -ENODATA if time not yet valid
  */
 int coo_time_now_ms(int64_t *out);
-
-/**
- * @brief Callback type for time-valid events
- */
-typedef void (*coo_time_valid_cb_t)(void *user);
 ```
 
 ---
@@ -131,7 +126,6 @@ sync_work_handler():
       - Convert sntp_time.seconds → struct timespec
       - Call clock_settime(CLOCK_REALTIME, &ts)
       - Set time_valid = true
-      - Fire registered callbacks
       - Break loop
    c. If failure, LOG_WRN and try next
 4. If all failed, LOG_ERR but keep any existing time
@@ -166,11 +160,6 @@ sync_work_handler():
 
 ```c
 #include <coo_commons/time_sync.h>
-
-void time_ready_callback(void *user)
-{
-    LOG_INF("Time is now valid, enabling TLS connections");
-}
 
 int main(void)
 {
