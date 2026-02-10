@@ -1,3 +1,16 @@
+  / ____/ __ \/ __ \   /__  /  ___  ____  / /_  __  _______
+ / /   / / / / / / /     / /  / _ \/ __ \/ __ \/ / / / ___/
+/ /___/ /_/ / /_/ /     / /__/  __/ /_/ / / / / /_/ / /    
+\____/\____/\____/     /____/\___/ .___/_/ /_/\__, /_/     
+                                /_/          /____/        
+  ______                     __      __     
+ /_  __/__  ____ ___  ____  / /___ _/ /____ 
+  / / / _ \/ __ `__ \/ __ \/ / __ `/ __/ _ \
+ / / /  __/ / / / / / /_/ / / /_/ / /_/  __/
+/_/  \___/_/ /_/ /_/ .___/_/\__,_/\__/\___/ 
+                  /_/                       
+
+
 # Zephyr COO Template
 
 Caltech Optical Observatories (COO) standardized template for Zephyr RTOS firmware projects. This template provides a consistent foundation with persistent settings, watchdog support, networking, and QEMU emulation built-in from day one.
